@@ -11,6 +11,7 @@ struct PostCell: View {
     let post : Post
     var body: some View {
         HStack(alignment: .top){
+            Text(String(post.userId))
             VStack(alignment: .leading){
                 Text(String(post.id))
                 Text(post.title)
