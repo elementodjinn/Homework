@@ -8,19 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = PostService()
+    @StateObject var viewModel = PostViewModel()
     var body: some View {
         VStack {
             Text("All Posts")
                 .font(.title)
-            List(viewModel.posts) {post in
-                PostCell(post:post)
-                    .background(.white)
+            List{
+                ForEach(Array(viewModel.posts.keys).sorted(by: <), id: \.self){ info in
+                    Section(header: Text("\(info)")){
+                        ForEach(viewModel.posts[info] ?? []){post in
+                            PostCell(post: post)
+                        }
+                    }
+                    
+                }
             }
+//            List(viewModel.posts) {post in
+//                PostCell(post:post)
+//                    .background(.white)
+//            }
             
         }
         .onAppear{
-            viewModel.fetchPosts()}
+            viewModel.getPostAsync()}
         .padding()
     }
 }

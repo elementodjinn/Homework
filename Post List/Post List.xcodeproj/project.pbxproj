@@ -14,6 +14,7 @@
 		187781E62A461B8F00C45628 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187781E52A461B8F00C45628 /* Post.swift */; };
 		187781E82A461C2F00C45628 /* Post Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187781E72A461C2F00C45628 /* Post Service.swift */; };
 		187781EA2A461DC300C45628 /* Post Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187781E92A461DC300C45628 /* Post Cell.swift */; };
+		187F80612A47724500D6DF48 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F80602A47724500D6DF48 /* PostViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		187781E72A461C2F00C45628 /* Post Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post Service.swift"; sourceTree = "<group>"; };
 		187781E92A461DC300C45628 /* Post Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post Cell.swift"; sourceTree = "<group>"; };
 		187F805E2A4624C200D6DF48 /* Fibonacci Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Fibonacci Function.swift"; path = "../Fibonacci Function.swift"; sourceTree = "<group>"; };
+		187F80602A47724500D6DF48 /* PostViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				187781D82A46001000C45628 /* ContentView.swift */,
 				187781E52A461B8F00C45628 /* Post.swift */,
 				187781E72A461C2F00C45628 /* Post Service.swift */,
+				187F80602A47724500D6DF48 /* PostViewModel.swift */,
 				187781E92A461DC300C45628 /* Post Cell.swift */,
 				187781DA2A46002700C45628 /* Assets.xcassets */,
 				187781DC2A46002700C45628 /* Post_List.entitlements */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187F80612A47724500D6DF48 /* PostViewModel.swift in Sources */,
 				187781E82A461C2F00C45628 /* Post Service.swift in Sources */,
 				187781E62A461B8F00C45628 /* Post.swift in Sources */,
 				187781D92A46001000C45628 /* ContentView.swift in Sources */,

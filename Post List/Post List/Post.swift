@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Post : Identifiable, Decodable{
+struct Post : Hashable, Identifiable, Codable{
     let userId : Int
     let id : Int
     let title : String
