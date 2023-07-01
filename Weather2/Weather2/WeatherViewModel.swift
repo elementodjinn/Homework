@@ -25,7 +25,7 @@ class WeatherViewModel: ObservableObject {
     @MainActor func getCityAsync(_ cityName: String){
         Task {
             do{
-                let c = try await service.fetchCityAsync(cityName)
+                let c = try await service.fetchCityAsync(cityName.replacingOccurrences(of: " ", with: "_"))
                 city = c
                 getWeatherAsync(c[0].lat,c[0].lon)
                 print(c)
