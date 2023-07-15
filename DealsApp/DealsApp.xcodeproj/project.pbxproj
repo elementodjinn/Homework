@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18473EB22A567D9700DE2A66 /* DealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18473EB12A567D9700DE2A66 /* DealView.swift */; };
+		186056EC2A5E200B00F46BC8 /* DealMiniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186056EB2A5E200B00F46BC8 /* DealMiniView.swift */; };
 		1871A1ED2A591D8F00CA469E /* DealPreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871A1EC2A591D8F00CA469E /* DealPreView.swift */; };
 		18DEE9162A53C564007021DE /* DealsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DEE9152A53C564007021DE /* DealsResponse.swift */; };
 		7C2AFD2D2A53043500BA663D /* DealsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2AFD2C2A53043500BA663D /* DealsAppApp.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		18473EB12A567D9700DE2A66 /* DealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealView.swift; sourceTree = "<group>"; };
+		186056EB2A5E200B00F46BC8 /* DealMiniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealMiniView.swift; sourceTree = "<group>"; };
 		1871A1EC2A591D8F00CA469E /* DealPreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealPreView.swift; sourceTree = "<group>"; };
 		18DEE9152A53C564007021DE /* DealsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsResponse.swift; sourceTree = "<group>"; };
 		7C2AFD292A53043500BA663D /* DealsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DealsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +161,7 @@
 				7C2AFD2E2A53043500BA663D /* HomeView.swift */,
 				1871A1EC2A591D8F00CA469E /* DealPreView.swift */,
 				18473EB12A567D9700DE2A66 /* DealView.swift */,
+				186056EB2A5E200B00F46BC8 /* DealMiniView.swift */,
 				7C2AFD612A53056700BA663D /* HomeViewModel.swift */,
 			);
 			path = DealsHomePage;
@@ -306,6 +309,7 @@
 				18DEE9162A53C564007021DE /* DealsResponse.swift in Sources */,
 				7C2AFD602A53052000BA663D /* DealsService.swift in Sources */,
 				18473EB22A567D9700DE2A66 /* DealView.swift in Sources */,
+				186056EC2A5E200B00F46BC8 /* DealMiniView.swift in Sources */,
 				7C2AFD622A53056700BA663D /* HomeViewModel.swift in Sources */,
 				1871A1ED2A591D8F00CA469E /* DealPreView.swift in Sources */,
 				7C2AFD2F2A53043500BA663D /* HomeView.swift in Sources */,

@@ -18,7 +18,6 @@ class HomeViewModel: ObservableObject {
     func getDeals() {
         do {
             deals = try dealsService.fetchDeals()
-            test = 1
         } catch {
             print(error.self)
         }

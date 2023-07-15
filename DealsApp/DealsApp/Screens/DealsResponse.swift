@@ -15,8 +15,16 @@ struct Deals :Codable {
     let deals : [Deal]
 }
 
-struct Deal: Codable, Identifiable {
-    let id : String
+struct Deal: Codable, Hashable {
+    static func == (lhs: Deal, rhs: Deal) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher){
+        hasher.combine(id)
+    }
+    
+    var id : String
     let title: String
     let url: String
     let price: Int
@@ -40,15 +48,29 @@ struct Like : Codable {
 }
 struct Dislike : Codable {
     let id: String
-    let user: User
+    let user: NameUser
 }
 struct Comment : Codable, Identifiable {
     let id: String
     let createdAt: String
     let text: String
-    let user: User
+    let user: NameUser
 }
 struct User : Codable {
     let name: String
+    let likes : [LikedDeals]
+}
+
+struct NameUser: Codable{
+    let name:String
+}
+
+struct LikedDeals: Codable{
+    let id: String
+    let deal: TruncDeal
+}
+
+struct TruncDeal: Codable{
+    let id : String
 }
 

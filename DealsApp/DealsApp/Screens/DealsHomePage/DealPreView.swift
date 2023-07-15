@@ -24,12 +24,10 @@ struct DealPreview : View{
             }
             VStack{
                 HStack{
-                    NavigationLink(destination: DealView(deal: deal)) {
-                        Text("\(deal.title)")
-                            .font(.system(size: 15))
-                            .multilineTextAlignment(.center)
-                            .lineLimit(3)
-                    }
+                    Text("\(deal.title)")
+                        .font(.system(size: 15))
+                        .multilineTextAlignment(.center)
+                        .lineLimit(3)
                     Spacer()
                     Text("$\(priceString)")
                 }
