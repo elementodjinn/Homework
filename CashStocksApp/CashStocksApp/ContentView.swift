@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = CashStockViewModel(stockService: StockService())
+    @StateObject var viewModel = CashStockViewModel(service: MockStockService())
     var body: some View {
         VStack {
             Text("STOCKS")
@@ -27,7 +27,6 @@ struct ContentView: View {
             }
         }
         .padding()
-        //.onAppear(perform: stocks)
     }
     var loadingView : some View {
         Group{
@@ -36,9 +35,6 @@ struct ContentView: View {
                 .fontWeight(.bold)
             .frame(maxHeight: 150)
         }
-    }
-    func stocks() {
-        viewModel.getStocks()
     }
 }
 

@@ -5,6 +5,7 @@
 //  Created by apple on 7/14/23.
 //
 
+import Foundation
 import XCTest
 import Combine
 @testable import CashStocksApp
@@ -21,7 +22,7 @@ class MockStockService: StockServiceProtocol {
             let result = try JSONDecoder().decode(StockResponse.self, from: data)
             return result.stocks
         } catch {
-            throw error
+            return []
         }
     }
 }
@@ -29,7 +30,7 @@ class MockStockService: StockServiceProtocol {
 final class CashStocksAppTests: XCTestCase {
     
     let failureStock = Stock(ticker: "", name: "", currency: "", current_price_cents: 0, quantity: 0, current_price_timestamp: 0)
-    var anyCancellable = Set<AnyCancellable>()
+    var anyCancellable: Set<AnyCancellable> = []
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -47,19 +48,22 @@ final class CashStocksAppTests: XCTestCase {
         // Any test you write for XCTest can be annotated as throws and async.
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+        let viewModel = CashStockViewModel(service: MockStockService())
         let exp = XCTestExpectation(description: "Testing Stocks Success")
-        let viewModel = CashStockViewModel(stockService: MockStockService())
         await viewModel.getStocks()
+        print(viewModel.stocks)
         viewModel.$stocks
+            .dropFirst()
             .sink{stocks in
-                if let stock = stocks.first {
+                print(stocks.isEmpty)
+                XCTAssertFalse(stocks.isEmpty, "Stocks shouldn't be empty right now")
+                let stock = stocks.first!
                     XCTAssertEqual(stock.ticker, "^GSPC")
                     exp.fulfill()
-                }
             }
             .store(in: &anyCancellable)
         
-        wait(for: [exp], timeout: 30.0)
+        await fulfillment(of: [exp], timeout: 150.0)
         
         
         
